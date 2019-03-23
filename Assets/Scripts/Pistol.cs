@@ -4,11 +4,19 @@ using System.Collections.Generic;
 
 public class Pistol : MonoBehaviour, IActivatable
 {
+    public Transform FirePoint;
     public GameObject ImpactEffect;
     public GameObject BulletEffect;
-    public Transform FirePoint;
+
     public int Ammunition = 10;
     public int Damage = 1;
+
+    private AudioSource ShootingSound;
+
+    void Awake()
+    {
+        this.ShootingSound = this.GetComponent<AudioSource>();
+    }
 
     public void Activate()
     {
@@ -17,6 +25,7 @@ public class Pistol : MonoBehaviour, IActivatable
 
     private void Shoot()
     {
+        ShootingSound.Play();
         var bullet = Instantiate(BulletEffect, FirePoint.position, Quaternion.identity);
         var bulletEffect = bullet.GetComponent<BulletEffect>();
         bulletEffect.SetStart(FirePoint.position);
@@ -27,10 +36,10 @@ public class Pistol : MonoBehaviour, IActivatable
         {
             bulletEffect.SetEnd(hitInfo.point);
 
-            var hasHealth = hitInfo.transform.gameObject.GetComponent<IHasHealth>();
-            if (hasHealth != null)
+            var health = hitInfo.transform.gameObject.GetComponent<Health>();
+            if (health != null)
             {
-                hasHealth.TakeDamage(Damage);
+                health.TakeDamage(Damage);
             }
 
             Instantiate(ImpactEffect, hitInfo.point, Quaternion.identity);
