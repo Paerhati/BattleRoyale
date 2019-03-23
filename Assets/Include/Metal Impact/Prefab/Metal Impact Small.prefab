@@ -75,6 +75,38 @@ PrefabInstance:
       propertyPath: m_Range
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 19849390, guid: 4b1de2252d29f1a4fa913046ed11a098, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19849390, guid: 4b1de2252d29f1a4fa913046ed11a098, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19849390, guid: 4b1de2252d29f1a4fa913046ed11a098, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19849390, guid: 4b1de2252d29f1a4fa913046ed11a098, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 19849390, guid: 4b1de2252d29f1a4fa913046ed11a098, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19849390, guid: 4b1de2252d29f1a4fa913046ed11a098, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 19849390, guid: 4b1de2252d29f1a4fa913046ed11a098, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 19849390, guid: 4b1de2252d29f1a4fa913046ed11a098, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 19898572, guid: 4b1de2252d29f1a4fa913046ed11a098, type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
       value: 3
@@ -97,27 +129,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19898572, guid: 4b1de2252d29f1a4fa913046ed11a098, type: 3}
       propertyPath: InitialModule.startSpeed.minScalar
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19898572, guid: 4b1de2252d29f1a4fa913046ed11a098, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 19849390, guid: 4b1de2252d29f1a4fa913046ed11a098, type: 3}
-      propertyPath: InitialModule.startSizeY.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19849390, guid: 4b1de2252d29f1a4fa913046ed11a098, type: 3}
-      propertyPath: InitialModule.startSizeZ.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19849390, guid: 4b1de2252d29f1a4fa913046ed11a098, type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19849390, guid: 4b1de2252d29f1a4fa913046ed11a098, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b1de2252d29f1a4fa913046ed11a098, type: 3}

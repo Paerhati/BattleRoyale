@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
 
     private Renderer[] renderers;
 
-    void Awake()
+    public virtual void Awake()
     {
         this.CurrentHealth = this.MaxHealth;
         this.renderers = this.GetComponentsInChildren<Renderer>();
@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
         this.OnDamage();
     }
 
-    private void OnDamage()
+    protected virtual void OnDamage()
     {
         if (this.CurrentHealth <= 0)
         {
