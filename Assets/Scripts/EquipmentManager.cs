@@ -5,21 +5,16 @@ using System.Collections.Generic;
 public class EquipmentManager : MonoBehaviour
 {
     public List<GameObject> Equipment;
-    private GameObject equippedItem;
+    public int CurrentlyEquippedIndex = 0;
 
     public GameObject GetEquippedItem()
     {
-        return this.equippedItem;
+        return this.Equipment[this.CurrentlyEquippedIndex];
     }
 
     void Awake()
     {
-        this.equippedItem = Equipment[0];
-        this.equippedItem.SetActive(true);
-    }
-
-    void Start()
-    {
+        this.GetEquippedItem().SetActive(true);
     }
 
     void Update()
@@ -68,19 +63,15 @@ public class EquipmentManager : MonoBehaviour
 
     private void SwitchEquippedItem(int index)
     {
-        if (index < 0 || index >= this.Equipment.Count)
+        if (index < 0 ||
+            index >= this.Equipment.Count ||
+            index == this.CurrentlyEquippedIndex)
         {
             return;
         }
 
-        var nextItem = this.Equipment[index];
-        if (this.equippedItem == nextItem)
-        {
-            return;
-        }
-
-        this.equippedItem.SetActive(false);
-        this.equippedItem = nextItem;
-        nextItem.SetActive(true);
+        this.GetEquippedItem().SetActive(false);
+        this.CurrentlyEquippedIndex = index;
+        this.GetEquippedItem().SetActive(true);
     }
 }

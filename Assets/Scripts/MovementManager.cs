@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class MovementManager : MonoBehaviour
 {
+    public Joystick Joystick;
+
     private CharacterController controller;
     private Vector3 velocity;
 
@@ -33,8 +35,14 @@ public class MovementManager : MonoBehaviour
         {
             if (controller.isGrounded)
             {
-                moveDirection.x = Input.GetAxis("Horizontal");
-                moveDirection.z = Input.GetAxis("Vertical");
+                var horizontal = Input.GetAxis("Horizontal");
+                horizontal = horizontal == 0 ? Joystick.Horizontal : horizontal;
+
+                var vertical = Input.GetAxis("Vertical");
+                vertical = vertical == 0 ? Joystick.Vertical : vertical;
+
+                moveDirection.x = horizontal;
+                moveDirection.z = vertical;
                 moveDirection *= 10f;
             }
         }
