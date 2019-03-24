@@ -15,6 +15,17 @@ public class Health : MonoBehaviour
         this.renderers = this.GetComponentsInChildren<Renderer>();
     }
 
+    public void TakeDamageAndKnockBack(int damage, Vector3 knockBackPoint, int knockBackForce = 5)
+    {
+        var knockBackManager = this.GetComponent<KnockBackManager>();
+        if (knockBackManager)
+        {
+            knockBackManager.KnockBack(knockBackPoint, knockBackForce);
+        }
+
+        this.TakeDamage(damage);
+    }
+
     public void TakeDamage(int damage)
     {
         this.CurrentHealth -= damage;

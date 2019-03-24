@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8029047516712966574
 Transform:
   m_ObjectHideFlags: 0
@@ -143,14 +143,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c14c4e0bbced76d469ea33fb219fbf9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShotAudio: {fileID: 8300000, guid: 37814b1714291254ab57d59b9db20a09, type: 3}
+  ReloadAudio: {fileID: 8300000, guid: 18e9376b9dac19c4d981f16843a1659f, type: 3}
   FirePoint: {fileID: 8029047516937570237}
   ImpactEffect: {fileID: 2870779442910632727, guid: bf2aedcd4a11e144f97c51ed80d33e6f,
     type: 3}
   ProjectilePrefab: {fileID: 6504862486582596322, guid: 28d62de6c67550646a7412a1751baa64,
     type: 3}
-  ShotAudio: {fileID: 8300000, guid: 37814b1714291254ab57d59b9db20a09, type: 3}
-  Ammunition: 10
+  AmmoType: 0
+  IsAutomatic: 0
   Damage: 1
+  MaxAmmunition: 10
+  CoolDown: 0.01
+  ReloadTime: 1
 --- !u!1001 &2516240029679238115
 PrefabInstance:
   m_ObjectHideFlags: 0

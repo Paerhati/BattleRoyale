@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : Health
 {
+    public Text HealthCounter;
     public Slider HealthSlider;
     private PlayerAudioManager audioManager;
 
@@ -10,20 +11,21 @@ public class PlayerHealth : Health
     {
         base.Awake();
         this.audioManager = GetComponent<PlayerAudioManager>();
-        UpdateHealthSlider();
+        UpdateHealthUI();
     }
 
     protected override void OnDamage()
     {
         base.OnDamage();
         this.audioManager.PlayOw();
-        UpdateHealthSlider();
+        UpdateHealthUI();
     }
 
-    private void UpdateHealthSlider()
+    private void UpdateHealthUI()
     {
         float value = (float) this.CurrentHealth / (float) this.MaxHealth;
         value *= this.HealthSlider.maxValue;
         this.HealthSlider.value = value;
+        this.HealthCounter.text = this.CurrentHealth.ToString();
     }
 }

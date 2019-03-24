@@ -24,7 +24,7 @@ public class EnemyMeleeAttack : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        if (player.gameObject == player)
+        if (collider.gameObject == player)
         {
             this.playerInRange = true;
         }
@@ -40,13 +40,12 @@ public class EnemyMeleeAttack : MonoBehaviour
 
     void Update()
     {
-        this.attackTimer -= Time.deltaTime;
-        this.attackTimer = Math.Max(this.attackTimer, 0);
-
         if (this.CanAttackPlayer())
         {
             this.AttackPlayer();
         }
+
+        this.attackTimer = Utils.CountDownTimer(this.attackTimer);
     }
 
     private bool CanAttackPlayer()

@@ -56,6 +56,14 @@ public class EquipmentManager : MonoBehaviour
         {
             SwitchEquippedItem(2);
         }
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            var reloadable = equippedItem.GetComponent<IReloadable>();
+            if (reloadable != null)
+            {
+                reloadable.Reload();
+            }
+        }
     }
 
     private void SwitchEquippedItem(int index)

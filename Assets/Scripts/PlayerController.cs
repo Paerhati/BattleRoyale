@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
         var equippedItem = this.equipmentManager.GetEquippedItem();
         if (equippedItem)
         {
-            TurnTowardsPoint(equippedItem.transform, point);
+            TurnTowardsPoint(equippedItem.transform, point, false);
         }
     }
 
