@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 7035145491289706566}
   - component: {fileID: 7035145491289706616}
   - component: {fileID: 7035145491289706567}
+  - component: {fileID: 1790441207}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -275,10 +276,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eab718b0040e09b429d332442c8405d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FacingJoystick: {fileID: 0}
+  ChangeWeaponButton: {fileID: 0}
   Equipment:
   - {fileID: 1089270110474696154}
   - {fileID: 1066565455689114363}
   - {fileID: 6548184021873379389}
+  CurrentlyEquippedIndex: 2
 --- !u!114 &7035145491289706622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,7 +295,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680935d6bf5a6ac41a4ef2bb3ff044f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerMoveSpeed: 10
 --- !u!114 &7035145491289706617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,7 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df9e59866bbe8ab46b94308bc4746245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Joystick: {fileID: 0}
+  MovementJoystick: {fileID: 0}
 --- !u!114 &7035145491289706616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,6 +352,19 @@ MonoBehaviour:
   AmmoUIContainer: {fileID: 0}
   AmmoUISlider: {fileID: 0}
   AmmoUIText: {fileID: 0}
+--- !u!114 &1790441207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7035145491289706608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba67e76fb70de745b8dd08d4ea5619e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FacingJoystick: {fileID: 0}
 --- !u!1001 &6430208493055191884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -415,6 +431,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 280175503617811314, guid: 8b7d12ea23d3c6147874f9c5dd83782e,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b7d12ea23d3c6147874f9c5dd83782e, type: 3}
@@ -526,6 +547,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Melee Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979260235167806237, guid: be587df0881c064478ab9eaa3833f9aa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7546599360405741966, guid: be587df0881c064478ab9eaa3833f9aa,
         type: 3}
@@ -704,6 +730,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5671922481598116756, guid: 0543a2734432a2c43b9214a966437c9b,
+        type: 3}
+      propertyPath: CoolDown
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099074882878451686, guid: 0543a2734432a2c43b9214a966437c9b,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0543a2734432a2c43b9214a966437c9b, type: 3}
