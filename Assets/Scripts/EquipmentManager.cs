@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
 public class EquipmentManager : MonoBehaviour
 {
     public Joystick FacingJoystick;
+    public Button ChangeWeaponButton;
     public List<GameObject> Equipment;
     public int CurrentlyEquippedIndex = 0;
 
@@ -16,12 +18,19 @@ public class EquipmentManager : MonoBehaviour
     void Awake()
     {
         this.GetEquippedItem().SetActive(true);
+        this.ChangeWeaponButton.onClick.AddListener(LoopThroughEquipment);
     }
 
     void Update()
     {
         HandleTouchInput();
         HandleKeyboardInput();
+    }
+
+    private void LoopThroughEquipment()
+    {
+        var nextIndex = (this.CurrentlyEquippedIndex + 1) % this.Equipment.Count;
+        SwitchEquippedItem(nextIndex);
     }
 
     private void HandleTouchInput()
