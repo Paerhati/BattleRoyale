@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MovementManager : MonoBehaviour
 {
-    public Joystick Joystick;
+    public Joystick MovementJoystick;
 
     private CharacterController controller;
     private Vector3 velocity;
@@ -36,10 +36,10 @@ public class MovementManager : MonoBehaviour
             if (controller.isGrounded)
             {
                 var horizontal = Input.GetAxis("Horizontal");
-                horizontal = horizontal == 0 ? Joystick.Horizontal : horizontal;
+                horizontal = horizontal == 0 ? MovementJoystick.Horizontal : horizontal;
 
                 var vertical = Input.GetAxis("Vertical");
-                vertical = vertical == 0 ? Joystick.Vertical : vertical;
+                vertical = vertical == 0 ? MovementJoystick.Vertical : vertical;
 
                 moveDirection.x = horizontal;
                 moveDirection.z = vertical;
@@ -57,5 +57,4 @@ public class MovementManager : MonoBehaviour
     {
         return this.knockBackCounter > 0;
     }
-
 }

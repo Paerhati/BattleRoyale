@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class EquipmentManager : MonoBehaviour
 {
+    public Joystick FacingJoystick;
     public List<GameObject> Equipment;
     public int CurrentlyEquippedIndex = 0;
 
@@ -19,10 +20,28 @@ public class EquipmentManager : MonoBehaviour
 
     void Update()
     {
-        HandlePlayerInput();
+        HandleTouchInput();
+        HandleKeyboardInput();
     }
 
-    private void HandlePlayerInput()
+    private void HandleTouchInput()
+    {
+        var horizontal = FacingJoystick.Horizontal;
+        var vertical = FacingJoystick.Vertical;
+
+        var equippedItem = this.GetEquippedItem();
+        var activatable = equippedItem.GetComponent<IActivatable>();
+
+        if (horizontal != 0 && vertical != 0)
+        {
+            if (activatable != null)
+            {
+                activatable.Activate();
+            }
+        }
+    }
+
+    private void HandleKeyboardInput()
     {
         var equippedItem = this.GetEquippedItem();
         var activatable = equippedItem.GetComponent<IActivatable>();
@@ -31,11 +50,11 @@ public class EquipmentManager : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                activatable.Activate();
+                // activatable.Activate();
             }
             if (Input.GetButton("Fire1"))
             {
-                activatable.Activating();
+                // activatable.Activating();
             }
         }
 
